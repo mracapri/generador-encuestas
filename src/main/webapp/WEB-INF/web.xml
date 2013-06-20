@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app id="ifm_service_catalog" version="2.4"
+         xmlns="http://java.sun.com/xml/ns/j2ee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee
+                             http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
+ 
+	<display-name>generador-encuestas</display-name>
+
+
+	<servlet>
+		<description>Mi primer Servlet</description>
+		<display-name>RegistraAlgo</display-name>
+		<servlet-name>RegistraAlgo</servlet-name>
+		<servlet-class> edu.utvm.clases.RegistraAlgo</servlet-class>
+	</servlet>
+
+
+	<servlet-mapping>
+		<servlet-name>RegistraAlgo</servlet-name>
+		<url-pattern>/servicio-registra-algo</url-pattern>
+	</servlet-mapping>
+
+	<!-- archivo de bienvenida -->
+	<welcome-file-list>
+        	<welcome-file>index.html</welcome-file>
+	</welcome-file-list>
+
+</web-app>
