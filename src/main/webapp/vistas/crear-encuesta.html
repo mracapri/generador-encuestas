@@ -1,54 +1,69 @@
-<!doctype html>
-<html lang="es">
-<head>
-	<meta charset="utf-8"/>
-	<meta name="viewport" content="width=device-width"/>
-	<title>Crear cuenta</title>
-	<link rel="stylesheet" href="../css/estilos-crear-encuesta.css"/>
-</head>
-<body>
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Bootstrap 101 Template</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="../css/estilos-home.css"/>
+    <link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link href="../bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
+     
+    <script src="http://code.jquery.com/jquery.js"></script>
+    <script src="../bootstrap/js/bootstrap.min.js"></script>
 	
-	<header>
-			<h2>Generador de encuestas</h2>
-			
-	</header>
-	<section id="contenedor">
-		<nav id="menu">		
-			<ul>
-				<li>
-					<a href="">Crear encuesta</a>
-				</li>
-				<li>
-					<a href="">Mis encuestas</a>
-				</li>
-				<li>
-					<a href="">Configuracion</a>
-				</li>			
-			</ul>
-		</nav>
-		<section id="busquedas">
-		<article class="fila1">
-			
-			<div>
-				<p><strong>Titulo: </strong></p>
-				<input type="text" placeholder="Text input">
-			</div>			
-			<div>
-				<p><strong>Descripcion de la encuesta : </strong></p>
-				<textarea rows="3"></textarea>
-			</div>
-			
-			<p>
-  				<button class="btn btn-small btn-primary" type="button">Crear</button>
-  				
-			</p>
-		</article>
-		
-	</section>
-		
-	</section>
-	<footer>
-		<p>SANCHEZ lEVARIO Esmeralda</p>
-	</footer>
+  </head>
+<body>
+  <header>
+      <h2>Generador de encuestas</h2>
+      
+  </header>
+  <!-- header -->
+	<div class="container">
+		<div class="navbar navbar-inverse">
+		  	<div class="navbar-inner">
+    			<a class="brand" href="crear-encuesta.html">Crear encuesta</a>
+    				<ul class="nav">
+      					<li class="active"><a href="mis-encuestas.html">Mis encuestas</a></li>
+      					<li><a href="#">Configuracion</a></li>
+      
+    				</ul>
+  			</div>
+		</div>
+
+    <div class="row-fluid">
+    <!--Body content-->
+        <form class="form-horizontal">
+          <div class="control-group">               
+            <div class="controls">
+              <blockquote>
+                <p>Titulo de la encuesta: </p>
+              </blockquote>
+              <input type="text" id="inputEmail" placeholder="Text input">
+            </div>
+          </div>
+          <div class="control-group">    
+            <div class="controls">
+              <blockquote>
+                <p>Descripcion de la encuesta</p>
+                <small>pequeña introduccion</small>
+              </blockquote>
+              <textarea rows="3"></textarea>
+            </div>
+          </div>
+          <div class="control-group">
+            <div class="controls">      
+              <button type="submit" class="btn">Sign in</button>
+            </div>
+          </div>         
+        </form>        
+    <!--Body content-->  
+    </div>
+
+	</div>
+
+  <footer>
+    <p>SANCHEZ lEVARIO Esmeralda</p>
+  </footer>
 </body>
 </html>
