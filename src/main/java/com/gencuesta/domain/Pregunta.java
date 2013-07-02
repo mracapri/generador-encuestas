@@ -20,7 +20,7 @@ public class Pregunta {
 			
 		}
 	}
-	
+		
 	
 	
 	public void setDescripcion(String nuevaDescripcion ){

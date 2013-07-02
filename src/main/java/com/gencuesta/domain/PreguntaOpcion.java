@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class PreguntaOpcion extends Pregunta{
 	private ArrayList<String> respuestas = new ArrayList<String>();
 	private String  respuestaSeleccionada;
-	//private ArrayList<imagen> respuestasImg = new ArrayList<imagen>();       byte 
+	//private ArrayList<ImageIcon> respuestasImg = new ArrayList<ImageIcon>();      // byte 
 	private  byte respuestaSeleccionadaImg;
 	
 	public PreguntaOpcion(String descripcion,boolean obligatorio,boolean esDeTiempo, ArrayList<String> respuestas){
@@ -17,6 +17,16 @@ public class PreguntaOpcion extends Pregunta{
 		super(descripcion,obligatorio,esDeTiempo);
 		//this.respuestasImg = respuestasImg;			
 	}
+	/*
+	 * descripcion, posibles respuestas
+	 * 
+	 * contertar
+	 * 
+	 * 
+	 * */
+	public void contestarPreguntaTexto(int numeroRespuesta){
+		respuestaSeleccionada = respuestas.get(numeroRespuesta);
+	}
 	
 	public void setRespuestaSeleccionada(String respuesta){
 		this.respuestaSeleccionada = respuesta;
@@ -27,6 +37,9 @@ public class PreguntaOpcion extends Pregunta{
 	}
 	
 	
+	public void contestarPreguntaImg(int numeroRespuesta){
+		//respuestasImg.get(numeroRespuesta);
+	}
 	
 	public void setRespuesta(byte respuesta){
 		this.respuestaSeleccionadaImg = respuesta;
