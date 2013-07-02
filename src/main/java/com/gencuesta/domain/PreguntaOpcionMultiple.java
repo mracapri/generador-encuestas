@@ -9,9 +9,9 @@ public class PreguntaOpcionMultiple extends Pregunta {
 	//private ArrayList<imagen> respuestaSeleccionadaImg = new ArrayList<imagen>();
 			
 	
-	public PreguntaOpcionMultiple(String descripcion,boolean obligatorio,boolean esDeTiempo,String respuestas){
+	public PreguntaOpcionMultiple(String descripcion,boolean obligatorio,boolean esDeTiempo,ArrayList<String> respuestas){
 		super(descripcion,obligatorio,esDeTiempo);
-		this.respuestas.add(respuestas);
+		this.respuestas = respuestas;	
 ;		
 	}
 	
@@ -20,10 +20,7 @@ public class PreguntaOpcionMultiple extends Pregunta {
 		//this.respuestasImg = respuestasImg;				
 	}
 	
-	
-	public void responderPregunta(int[] respuestas){
 		
-	}
 	
 
 }
