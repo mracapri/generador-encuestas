@@ -43,7 +43,7 @@
         </authentication-provider>
     </authentication-manager>
 	 
-	<beans:bean id="securityHandler" class="edu.utvm.generadorencuestas.security.SecurityHandler"/>
+	<beans:bean id="securityHandler" class="edu.utvm.gencuesta.security.SecurityHandler"/>
 	 
 	 
 </beans:beans>
