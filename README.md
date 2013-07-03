@@ -1,5 +1,16 @@
 generador-encuestas
 ===================
 
-generar encuestas
-rama de desarrollo!!!!
+
+Colaboradores
+===================
+
+Esmeralsa Sanchez Levario
+Mario Rivera Angeles
+
+
+Desarrollo
+===================
+* Seguridad
+* Creacion de encuensta
+* Creacion de preguntas

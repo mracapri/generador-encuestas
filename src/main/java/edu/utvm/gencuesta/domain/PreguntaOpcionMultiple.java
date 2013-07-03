@@ -1,4 +1,4 @@
-package com.gencuesta.domain;
+package edu.utvm.gencuesta.domain;
 import java.util.*;
 
 
