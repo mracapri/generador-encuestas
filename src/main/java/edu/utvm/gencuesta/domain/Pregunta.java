@@ -29,9 +29,29 @@ public class Pregunta {
 	public String getDescripcion(){
 		return this.descripcion;		
 	}
-	/*
-	 * modicar pregunta
-	 * */
+	
+	public void setObligatorio(boolean obligatorio ){
+		this.obligatorio = obligatorio;		
+	}
+	public boolean getObligatorio(){
+		return this.obligatorio;		
+	}
+	public void setEsDeTiempo(boolean esDeTiempo ){
+		this.esDeTiempo = esDeTiempo;		
+	}
+	public boolean getEsDeTiempo(){
+		return this.esDeTiempo;		
+	}
+	
+	/*	asignar o modificar tiempo	 * */
+	public void setTiempo(int tiempo ){
+		this.tiempo = tiempo;		
+	}
+	public int getTiempo(){
+		return this.tiempo;		
+	}
+	
+	
 	
 
 }

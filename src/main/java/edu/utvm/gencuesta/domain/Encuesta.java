@@ -1,6 +1,8 @@
-package edu.utvm.gencuesta.domain;
+package edu.utvm.gencuesta.domain;	
 import java.util.ArrayList;
 import java.util.Date;
+import edu.utvm.gencuesta.domain.Pregunta;
+import edu.utvm.gencuesta.domain.Usuario;
 
 public class Encuesta {
 	private Usuario usuario;//

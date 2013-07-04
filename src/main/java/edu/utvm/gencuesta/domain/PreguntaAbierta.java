@@ -9,16 +9,11 @@ public class PreguntaAbierta extends Pregunta{
 	}
 		
 	public void setRespuesta(String respuesta){
-		
+		this.respuesta = respuesta;	
 	}
 	
 	public String getRespuesta(){
 		return this.respuesta;		
-	}
-	
-	public void responderPregunta(String respuesta){
-		
-		this.respuesta = respuesta;		
 	}
 
 }

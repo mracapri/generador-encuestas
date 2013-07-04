@@ -20,7 +20,7 @@
       
   </header>
   <!-- header -->
-  <div class="container">
+  <div id= "contenedor-principal" class="container">
     
     <div class="navbar navbar-inverse">
         <div class="navbar-inner">
@@ -36,23 +36,46 @@
     <!-- Contenedor -->
     <div class="row-fluid">
       <!-- Contenedor fila1 arriva -->
-      <div class="span4">
-        <p></p>
+      <div id = "contenedor-fila1-arriva"class="span4">
+        <p>:D </p>
         <!-- Contenedor fila1 abajo -->
-        <div class="row-fluid">
+        <div id = "contenedor-fila1-abajo" class="row-fluid">
           <p>Descripcion de la encuesta</p>
           <!-- Button to trigger modal -->
           <a href="#myModal" role="button" class="btn btn-large"  data-toggle="modal"><i class="icon-plus"></i>Pregunta</a>  
           <!-- Modal -->
             <div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby=" myModalLabel" aria-hidden="true">
               <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>                
                 <h3 id="myModalLabel">Modal header</h3>
               </div>
-              <div class="modal-body">
-                <p>Como crear tus preguntas ?</p>
+
+              <div class="modal-body">              
+                <!--Body content-->
+                <form class="form-horizontal">          
+                  <blockquote>
+                    <p>Texto de pregunta: </p>
+                  </blockquote>               
+                  <div class="controls">              
+                    <input class="span3" type="text" placeholder=".span3">
+                  </div>                  
+                  <blockquote>
+                    <p>Tipo de pregunta: </p>                
+                  </blockquote>    
+                  <div class="controls">                                        
+                      <select class="span3">
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                      </select>
+                  </div>                                                        
+                </form>        
+                <!--Body content-->                
               </div>
               <div class="modal-footer">
+                <!-- hacer pregunta -->
                 <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
                 <button class="btn btn-primary">Save changes</button>
               </div>

@@ -17,13 +17,7 @@ public class PreguntaOpcion extends Pregunta{
 		super(descripcion,obligatorio,esDeTiempo);
 		//this.respuestasImg = respuestasImg;			
 	}
-	/*
-	 * descripcion, posibles respuestas
-	 * 
-	 * contertar
-	 * 
-	 * 
-	 * */
+	
 	public void contestarPreguntaTexto(int numeroRespuesta){
 		respuestaSeleccionada = respuestas.get(numeroRespuesta);
 	}
