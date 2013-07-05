@@ -20,11 +20,11 @@ header{
 }
 
 #contenedor-login{
-	width: 15%;
+	width: 40%;
 	background: #fff;
 	position: relative;
 	margin: 10% auto;
-	padding: 60px;
+	padding: 20px 0px;
 	-moz-border-radius: 7px;
 	border-radius: 7px;
 	-webkit-box-shadow: 0 3px 20px rgba(0,0,0,0.9);

@@ -5,24 +5,21 @@
 	<body>
 		<h2>Generador de encuestas 1.0.0</h2>
 		<nav id="menu">		
-			<ul>
-				<li>
-					<a href="pagina1.jsp">Pagina 1</a>
-				</li>
+			<ul>				
 				<li>
 					<a href="${pageContext.request.contextPath}/resolver/views/login">login</a>
 				</li>
 				<li>
-					<a href="vistas/home.html">home</a>
+					<a href="${pageContext.request.contextPath}/resolver/views/home.html">home</a>
 				</li>
 				<li>
 					<a href="${pageContext.request.contextPath}/resolver/views/crear-encuesta">crear-encuesta</a>
 				</li>
 				<li>
-					<a href="vistas/encuesta-diseniar.html">diseniar-encuesta</a>
+					<a href="${pageContext.request.contextPath}/resolver/views/encuesta-diseniar.html">diseniar-encuesta</a>
 				</li>
 				<li>
-					<a href="vistas/mis-encuestas.html">mis-encuestas</a>
+					<a href="${pageContext.request.contextPath}/resolver/views/mis-encuestas.html">mis-encuestas</a>
 				</li>
 				<li>
 					<a href="${pageContext.request.contextPath}/resolver/encuesta/save">Ejemplo MVC</a>
