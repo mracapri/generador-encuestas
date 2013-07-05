@@ -32,9 +32,8 @@
 	<!-- Upoad file -->
 	<import resource="AppCtx-UploadFiles.xml" />
 	
-	<!-- Persistence 
+	<!-- Persistence -->
 	<import resource="AppCtx-Persistence.xml" />
-	-->
 	
 	<!-- Seguridad -->
 	<import resource="AppCtx-Security.xml" />
