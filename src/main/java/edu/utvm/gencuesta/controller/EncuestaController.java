@@ -18,24 +18,31 @@ import edu.utvm.gencuesta.domain.Pregunta;
 import edu.utvm.gencuesta.service.EncuestaService;
 
 @Controller
-@RequestMapping("/views")
-public class IndexController {
+@RequestMapping("/encuesta")
+public class EncuestaController {
 	
 	protected final Log log = LogFactory.getLog(getClass());
 	
-	@RequestMapping(value="/login")
-    public ModelAndView handleIndexRequestLoginPage(HttpServletRequest request, HttpServletResponse response)
+	@Autowired
+	private EncuestaService serviceEncuesta;		
+	
+	@RequestMapping(value="/save")
+    public ModelAndView handleIndexRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-		ModelAndView model = new ModelAndView("login");
+		ModelAndView model = new ModelAndView("index");
+		
+		String saludo = "Ola k ace!!";
+		
+		// pasando valores al modelo
+		model.addObject("mensaje", saludo);
+		
+		log.info("Atendiendo peticion..");
+		
+		Pregunta primeraPregunta = new Pregunta();
+		Encuesta encuesta = new Encuesta("Yo que se!!",
+				"Una encuesta divertida", primeraPregunta);		
+		serviceEncuesta.registrarEncuesta(encuesta);
 		
 		return model;
     }
-	
-	@RequestMapping(value="/crear-encuesta")
-    public ModelAndView handleIndexRequestLoginCrearEncuesta(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-		ModelAndView model = new ModelAndView("crear-encuesta");
-		
-		return model;
-    }	
 }

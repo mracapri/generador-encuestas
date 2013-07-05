@@ -10,13 +10,13 @@
 					<a href="pagina1.jsp">Pagina 1</a>
 				</li>
 				<li>
-					<a href="vistas/login.html">login</a>
+					<a href="${pageContext.request.contextPath}/resolver/views/login">login</a>
 				</li>
 				<li>
 					<a href="vistas/home.html">home</a>
 				</li>
 				<li>
-					<a href="vistas/crear-encuesta.html">crear-encuesta</a>
+					<a href="${pageContext.request.contextPath}/resolver/views/crear-encuesta">crear-encuesta</a>
 				</li>
 				<li>
 					<a href="vistas/encuesta-diseniar.html">diseniar-encuesta</a>
@@ -25,7 +25,7 @@
 					<a href="vistas/mis-encuestas.html">mis-encuestas</a>
 				</li>
 				<li>
-					<a href="resolver/views/index">Ejemplo MVC</a>
+					<a href="${pageContext.request.contextPath}/resolver/encuesta/save">Ejemplo MVC</a>
 				</li>
 			</ul>
 		</nav>
