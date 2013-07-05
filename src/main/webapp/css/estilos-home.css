@@ -1,34 +1,38 @@
 *{margin:0;}
 footer
 {	
-	background: #a1cf3d;
+	background: #098609;
 	bottom: 0;
 	left: 0;
 	position: fixed;	
 	width: 100%;
 }
+
+
 header{
 	text-align: center;
-	background: #a1cf3d;
-	height: 100px;
+	background:
+   	#E2E2E2 url(../images/fondo-header.png)
+   	repeat-x left center;
+	height: 120px;
 	margin-bottom: 10px;
 	margin-top: 0%;
 }
 
 #contenedor-login{
-width: 15%;
-background: #fff;
-position: relative;
-margin: 10% auto;
-padding: 60px;
--moz-border-radius: 7px;
-border-radius: 7px;
--webkit-box-shadow: 0 3px 20px rgba(0,0,0,0.9);
--moz-box-shadow: 0 3px 20px rgba(0,0,0,0.9);
-box-shadow: 0 3px 20px rgba(0,0,0,0.9);
-background: -moz-linear-gradient(#fff, #ccc);
-background: -webkit-gradient(linear, right bottom, right top, color-stop(1, rgb(255,255,255)), color-stop(0.57, rgb(230,230,230)));
-text-shadow: 0 1px 0 #fff;
+	width: 15%;
+	background: #fff;
+	position: relative;
+	margin: 10% auto;
+	padding: 60px;
+	-moz-border-radius: 7px;
+	border-radius: 7px;
+	-webkit-box-shadow: 0 3px 20px rgba(0,0,0,0.9);
+	-moz-box-shadow: 0 3px 20px rgba(0,0,0,0.9);
+	box-shadow: 0 3px 20px rgba(0,0,0,0.9);
+	background: -moz-linear-gradient(#fff, #ccc);
+	background: -webkit-gradient(linear, right bottom, right top, color-stop(1, rgb(255,255,255)), color-stop(0.57, rgb(230,230,230)));
+	text-shadow: 0 1px 0 #fff;
 }
 
 #contenedor-principal{
