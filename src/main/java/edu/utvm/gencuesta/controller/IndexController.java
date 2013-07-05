@@ -31,4 +31,6 @@ public class IndexController {
 		log.info("Atendiendo peticion..");
 		return model;
     }
+	
+	
 }
