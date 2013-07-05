@@ -16,11 +16,11 @@ header{
 }
 
 #contenedor-login{
-width: 30%;
+width: 15%;
 background: #fff;
 position: relative;
 margin: 10% auto;
-padding: 30px;
+padding: 60px;
 -moz-border-radius: 7px;
 border-radius: 7px;
 -webkit-box-shadow: 0 3px 20px rgba(0,0,0,0.9);
@@ -57,9 +57,22 @@ text-shadow: 0 1px 0 #fff;
 	border-radius:15px 0px 25px 0px;
 	padding:10px;
 }
-#tabla-encuestas{
-	width: 100%;
+.contenedor-pregunta{
+	padding: 5px;
+	box-shadow: 0px 1px 1px rgb(6,73,24), -0px -1px 1px rgb(6,73,24);
+	width: auto;
+	height: auto;
+
 }
+.encabezados{
+	color: #145779;
+}
+.alinear-izquierda{
+	padding-left: 0 !important;
+}
+
+
+
 
 
 @media screen and (max-width:1000px){

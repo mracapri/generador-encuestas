@@ -49,9 +49,7 @@ public class PreguntaOpcionMultiple extends Pregunta {
 	}
 	
 	
-	public  ArrayList<Integer> getRespuestasImg(){
-		
-		
+	public  ArrayList<Integer> getRespuestasImg(){				
 		return this.respuestaSeleccionadaImg;		
 	}
 	

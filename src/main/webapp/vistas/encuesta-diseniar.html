@@ -47,30 +47,62 @@
             <div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby=" myModalLabel" aria-hidden="true">
               <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>                
-                <h3 id="myModalLabel">Modal header</h3>
+                <h3 id="myModalLabel">Generador de encuestas </h3>
               </div>
 
               <div class="modal-body">              
                 <!--Body content-->
-                <form class="form-horizontal">          
-                  <blockquote>
-                    <p>Texto de pregunta: </p>
-                  </blockquote>               
-                  <div class="controls">              
-                    <input class="span3" type="text" placeholder=".span3">
-                  </div>                  
-                  <blockquote>
-                    <p>Tipo de pregunta: </p>                
-                  </blockquote>    
-                  <div class="controls">                                        
-                      <select class="span3">
-                        <option>1</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
-                        <option>5</option>
-                      </select>
-                  </div>                                                        
+                <form class="form-horizontal">
+
+                  <p class="encabezados">
+                    <strong>Pregunta </strong>
+                  </p>
+                  <div class="contenedor-pregunta">                    
+                    <p>
+                      <strong>Texto de la pregunta:</strong>
+                    </p>               
+                    <div class= "alinear-izquierda" class="controls">              
+                      <input class="span14" type="text" placeholder="Text input">
+                    </div>                  
+                    <p>
+                      <strong>Tipo de pregunta:</strong>
+                    </p>    
+                    <div  class= "alinear-izquierda" class="controls">                                        
+                       <select class="span7">
+                          <option>1</option>
+                          <option>2</option>
+                          <option>3</option>
+                          <option>4</option>
+                          <option>5</option>
+                        </select>
+                    </div> 
+                  </div>
+                  <p class="encabezados">
+                      <strong>Opciones de respuesta </strong>
+                  </p>
+                  <div class="contenedor-pregunta">
+                    
+                    <p>
+                      <strong>Opciones de respuesta: </strong><small> Ingresar cada opcion en lines separadas</small>
+                    </p>
+                      <textarea class="span14" rows="2"></textarea>
+
+
+                      <label class="checkbox">
+                        <input type="checkbox" value="">
+                          Pregunta de respuesta obligatoria(opcional)<small> Muestra un mensaje de error personalizado cuando los encuestados intenten omitir esta pregunta.</small>
+                      </label>
+                      <label class="checkbox">
+                        <input type="checkbox" value="">
+                          Pregunta de tiempo(opcional)<small> Permite dar a la pregunta cierto tiempo para ser contestada.</small>
+                      </label>
+                  </div>
+
+
+
+
+
+
                 </form>        
                 <!--Body content-->                
               </div>

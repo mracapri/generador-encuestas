@@ -1,5 +1,7 @@
 package edu.utvm.gencuesta.domain;	
 
+
+
 public class Pregunta {
 	private boolean obligatorio;
 	private String descripcion;
