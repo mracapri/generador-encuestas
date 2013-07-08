@@ -35,7 +35,8 @@
             <label class="checkbox">
             <input  type="checkbox"> Mantner la sesiÃ³n iniciada.
             </label> </br></br>
-            <button type="submit" class="btn">Iniciar SesiÃ³n</button>
+            <button type="submit" class="btn">Iniciar SesiÃ³n</button></br>
+            <a href='http://'    >¿Has olvidado tu contraseña?</a>
         </div>
       </div>
   </form>
