@@ -14,8 +14,8 @@ public class EncuestaServiceImpl implements EncuestaService{
 	
 	@Override
 	public void registrarEncuesta(Encuesta encuesta) {
-		/* Se implementa la logica del negocio */
 		
+		/* Se implementa la logica del negocio */		
 		encuestaRepository.save(encuesta);
 	}
 

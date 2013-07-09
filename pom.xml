@@ -284,7 +284,25 @@
 					<encoding>Cp1252</encoding>
 				</configuration>				
 			</plugin>
-			
+	
+	
+	        <plugin>
+	            <groupId>com.voltvoodoo</groupId>
+	            <artifactId>brew</artifactId>
+	            <version>0.2.10</version>
+	            <executions>
+	                <execution>
+	                    <goals>
+	                        <goal>compile</goal>
+	                    </goals>
+	                </execution>
+	            </executions>
+				<configuration>
+					<coffeeSourceDir>${basedir}/src/main/coffeescript</coffeeSourceDir>
+					<coffeeOutputDir>${basedir}/src/main/webapp/web-resources/js</coffeeOutputDir>
+					<!-- <watch>true</watch> -->
+				</configuration>
+	        </plugin>
 		</plugins>
 	</build>
 </project>

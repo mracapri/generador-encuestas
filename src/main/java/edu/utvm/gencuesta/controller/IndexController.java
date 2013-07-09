@@ -29,23 +29,7 @@ public class IndexController {
 		ModelAndView model = new ModelAndView("login");
 		
 		return model;
-    }
-	
-	@RequestMapping(value="/crear-encuesta")
-    public ModelAndView handleIndexRequestLoginCrearEncuesta(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-		ModelAndView model = new ModelAndView("crear-encuesta");
-		
-		return model;
-    }
-	
-	@RequestMapping(value="/encuesta-diseniar")
-    public ModelAndView handleIndexRequestLoginEncuestaDiseniar(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-		ModelAndView model = new ModelAndView("encuesta-diseniar");
-		
-		return model;
-    }
+    }		
 	
 	@RequestMapping(value="/home")
     public ModelAndView handleIndexRequestLoginHome(HttpServletRequest request, HttpServletResponse response)

@@ -36,6 +36,6 @@
 	<import resource="AppCtx-Persistence.xml" />
 	
 	<!-- Seguridad -->
-	<import resource="AppCtx-Security.xml" />
+	<import resource="AppCtx-Security.xml" />	
 	
 </beans>

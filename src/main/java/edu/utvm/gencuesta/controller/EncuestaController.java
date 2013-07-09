@@ -5,44 +5,81 @@ import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.validation.Valid;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.servlet.ModelAndView;
 
 import edu.utvm.gencuesta.domain.Encuesta;
 import edu.utvm.gencuesta.domain.Pregunta;
+import edu.utvm.gencuesta.domain.TipoPregunta;
+import edu.utvm.gencuesta.jsondomain.JsonRequestSaveQuestion;
 import edu.utvm.gencuesta.service.EncuestaService;
+import edu.utvm.gencuesta.util.CatalogosEstaticos;
 
 @Controller
 @RequestMapping("/encuesta")
+@SessionAttributes({"new-encuesta"})
 public class EncuestaController {
 	
 	protected final Log log = LogFactory.getLog(getClass());
 	
 	@Autowired
-	private EncuestaService serviceEncuesta;		
+	private EncuestaService serviceEncuesta;
 	
-	@RequestMapping(value="/save")
-    public ModelAndView handleIndexRequest(HttpServletRequest request, HttpServletResponse response)
+	@Autowired
+	private CatalogosEstaticos catalogos;
+	
+
+	@RequestMapping(value="/save-question", method=RequestMethod.POST, headers={"content-type=application/json"})
+    public @ResponseBody String handleIndexRequestSaveQuestion(
+    		HttpServletRequest request, 
+    		HttpServletResponse response, @RequestBody JsonRequestSaveQuestion value)
             throws ServletException, IOException {
-		ModelAndView model = new ModelAndView("index");
-		
-		String saludo = "Ola k ace!!";
-		
-		// pasando valores al modelo
-		model.addObject("mensaje", saludo);
-		
-		log.info("Atendiendo peticion..");
-		
-		Pregunta primeraPregunta = new Pregunta();
-		Encuesta encuesta = new Encuesta("Yo que se!!",
-				"Una encuesta divertida", primeraPregunta);		
-		serviceEncuesta.registrarEncuesta(encuesta);
-		
+		log.info(value);
+		//return "redirect:create-form";
+		return "";
+    }
+	
+	@RequestMapping(value="/save-encuesta", method=RequestMethod.POST)
+    public ModelAndView handleIndexRequest(HttpServletRequest request, 
+    		HttpServletResponse response, @ModelAttribute("new-encuesta") @Valid Encuesta encuesta,
+    		BindingResult result)
+            throws ServletException, IOException {
+		ModelAndView model = new ModelAndView("crear-encuesta");		
+		if (!result.hasErrors()) {
+			model.setViewName("redirect:design");
+		}else{
+			model.addObject("result", result);
+		}
+		return model;
+    }
+	
+	@RequestMapping(value="/create-form")
+    public ModelAndView handleIndexRequestLoginCrearEncuesta(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+		ModelAndView model = new ModelAndView("crear-encuesta");
+		model.addObject("new-encuesta", new Encuesta("", "", null));
+		return model;
+    }
+	
+	@RequestMapping(value="/design")
+    public ModelAndView handleIndexRequestLoginEncuestaDiseniar(HttpServletRequest request, HttpServletResponse response,
+    		@ModelAttribute("new-encuesta") Encuesta encuesta)
+            throws ServletException, IOException {
+		ModelAndView model = new ModelAndView("encuesta-diseniar");
+		model.addObject("encuesta", encuesta);
+		model.addObject("tiposPreguntas", catalogos.getTiposPreguntas());
 		return model;
     }
 }

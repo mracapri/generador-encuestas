@@ -2,6 +2,7 @@ package edu.utvm.gencuesta.domain;
 import java.util.ArrayList;
 import java.util.Date;
 
+import org.hibernate.validator.constraints.NotEmpty;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -11,9 +12,14 @@ public class Encuesta {
 	private String id;
 	private Usuario usuario;
 	private ArrayList<Pregunta> preguntas;
-	private Date fechaCreacion;	
+	private Date fechaCreacion;
+	
+	@NotEmpty
 	private String titulo;
+	
+	@NotEmpty
 	private String descripcion;
+	
 	private ArrayList<String> palabrasClave;
 	private boolean permitirModificacion;
 	private Date fechaLimiteModificacion;

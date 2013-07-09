@@ -13,10 +13,10 @@
 					<a href="${pageContext.request.contextPath}/resolver/views/home.html">home</a>
 				</li>
 				<li>
-					<a href="${pageContext.request.contextPath}/resolver/views/crear-encuesta">crear-encuesta</a>
+					<a href="${pageContext.request.contextPath}/resolver/encuesta/create-form">crear-encuesta</a>
 				</li>
 				<li>
-					<a href="${pageContext.request.contextPath}/resolver/views/encuesta-diseniar.html">diseniar-encuesta</a>
+					<a href="${pageContext.request.contextPath}/resolver/encuesta/design">diseniar-encuesta</a>
 				</li>
 				<li>
 					<a href="${pageContext.request.contextPath}/resolver/views/mis-encuestas.html">mis-encuestas</a>

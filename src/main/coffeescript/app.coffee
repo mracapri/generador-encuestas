@@ -1,0 +1,2 @@
+JQuery ->
+	### logica de vista ###
