@@ -1,5 +1,5 @@
 (function() {
   JQuery(function() {
-    /* logica de vista */
+    return alert("${clave} jquery embed");
   });
 }).call(this);

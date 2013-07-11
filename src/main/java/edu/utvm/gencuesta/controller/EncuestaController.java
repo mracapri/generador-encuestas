@@ -44,11 +44,12 @@ public class EncuestaController {
 	@RequestMapping(value="/save-question", method=RequestMethod.POST, headers={"content-type=application/json"})
     public @ResponseBody String handleIndexRequestSaveQuestion(
     		HttpServletRequest request, 
-    		HttpServletResponse response, @RequestBody JsonRequestSaveQuestion value)
+    		HttpServletResponse response, 
+    		@ModelAttribute JsonRequestSaveQuestion value)
             throws ServletException, IOException {
-		log.info(value);
-		//return "redirect:create-form";
-		return "";
+		response.setHeader("content-type", "application/json");
+		log.info(value);		
+		return "{result:ok}";
     }
 	
 	@RequestMapping(value="/save-encuesta", method=RequestMethod.POST)
