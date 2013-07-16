@@ -19,9 +19,9 @@ public class CatalogosEstaticos {
 	
 	private void init() {
 		tiposPreguntas = new ArrayList<TipoPregunta>();
-		tiposPreguntas.add(new TipoPregunta(1, "Pregunta abierta"));
-		tiposPreguntas.add(new TipoPregunta(2, "Pregunta de opcion"));
-		tiposPreguntas.add(new TipoPregunta(3, "Pregunta de opcion multiple"));
+		tiposPreguntas.add(new TipoPregunta("PA", "Pregunta abierta"));
+		tiposPreguntas.add(new TipoPregunta("PO", "Pregunta de opcion"));
+		tiposPreguntas.add(new TipoPregunta("POM", "Pregunta de opcion multiple"));
 	}
 	
 	public List<TipoPregunta> getTiposPreguntas() {

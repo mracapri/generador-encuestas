@@ -1,18 +1,20 @@
 package edu.utvm.gencuesta.domain;
 
 public class TipoPregunta {
-	private int id;
+	private String clave;
 	private String descripcion;
 	
-	public TipoPregunta(int id, String descripcion) {
-		this.id = id;
+	public TipoPregunta(String clave, String descripcion) {
+		this.clave = clave;
 		this.descripcion = descripcion;
 	}
 	
-	public int getId() {
-		return id;
-	}
 	public String getDescripcion() {
 		return descripcion;
-	}		
+	}
+
+	public String getClave() {
+		return clave;
+	}
+
 }

@@ -1,59 +1,59 @@
-package edu.utvm.gencuesta.domain;	
-
-
+package edu.utvm.gencuesta.domain;
 
 public class Pregunta {
 	private boolean obligatorio;
 	private String descripcion;
 	private boolean esDeTiempo;
 	private int tiempo;
-	
-	public Pregunta(){
-		
-				
+
+	public Pregunta() {
+		/*
+		 * Crea una preguna sin descricion, no obligatoria, que no es de tiempo
+		 * y tiempo cero
+		 */
 	}
-	public Pregunta(String descripcion,boolean obligatorio,boolean esDeTiempo){
+
+	public Pregunta(String descripcion, boolean obligatorio) {
 		this.descripcion = descripcion;
 		this.obligatorio = obligatorio;
-		this.esDeTiempo = esDeTiempo;		
-		
-		if(esDeTiempo){
-			//solicitar tiempo
-			
-		}
 	}
-		
-	
-	
-	public void setDescripcion(String nuevaDescripcion ){
-		this.descripcion = nuevaDescripcion;		
+
+	public Pregunta(String descripcion, boolean obligatorio,
+			boolean esDeTiempo, int tiempo) {
+		this(descripcion, obligatorio);
+		this.esDeTiempo = esDeTiempo;
 	}
-	public String getDescripcion(){
-		return this.descripcion;		
+
+	public void setDescripcion(String nuevaDescripcion) {
+		this.descripcion = nuevaDescripcion;
 	}
-	
-	public void setObligatorio(boolean obligatorio ){
-		this.obligatorio = obligatorio;		
+
+	public String getDescripcion() {
+		return this.descripcion;
 	}
-	public boolean getObligatorio(){
-		return this.obligatorio;		
+
+	public void setObligatorio(boolean obligatorio) {
+		this.obligatorio = obligatorio;
 	}
-	public void setEsDeTiempo(boolean esDeTiempo ){
-		this.esDeTiempo = esDeTiempo;		
+
+	public boolean getObligatorio() {
+		return this.obligatorio;
 	}
-	public boolean getEsDeTiempo(){
-		return this.esDeTiempo;		
+
+	public void setEsDeTiempo(boolean esDeTiempo) {
+		this.esDeTiempo = esDeTiempo;
 	}
-	
-	/*	asignar o modificar tiempo	 * */
-	public void setTiempo(int tiempo ){
-		this.tiempo = tiempo;		
+
+	public boolean getEsDeTiempo() {
+		return this.esDeTiempo;
 	}
-	public int getTiempo(){
-		return this.tiempo;		
+
+	public void setTiempo(int tiempo) {
+		this.tiempo = tiempo;
 	}
-	
-	
-	
+
+	public int getTiempo() {
+		return this.tiempo;
+	}
 
 }
