@@ -28,6 +28,7 @@ public class JSController {
 		headers.setContentType(MediaType.parseMediaType("application/x-javascript"));
 		String javascript = "var URL_APP = '/" + context.getServletContextName() + "';";
 		javascript = javascript + "var URL_APP_SERVICE = '/" + context.getServletContextName() + "/resolver';";
+		javascript = javascript + "var TEST = true;";
 		return javascript;
 	}
 

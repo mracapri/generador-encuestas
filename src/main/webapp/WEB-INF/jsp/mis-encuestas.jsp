@@ -23,7 +23,7 @@
           <a class="brand" href="crear-encuesta.html">Crear encuesta</a>
             <ul class="nav">
                 <li class="active"><a href="mis-encuestas.html">Mis encuestas</a></li>
-                <li><a href="#">Configuracion</a></li>
+                <li><a href="#">Configuraci&oacuten</a></li>
       
             </ul>
         </div>

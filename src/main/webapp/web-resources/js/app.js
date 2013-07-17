@@ -1,5 +1,10 @@
 /* Angular controllers */
 
+function CrearEncuestaController($scope){
+	$scope.titulo = "Encuesta emigrantes";
+	$scope.descripcion = "Es una encuesta con el proposito de conocer la problematica economica y social de los hijos de indocumentados";
+}
+
 function EncuestaDiseniarController($scope, $http){
 	
 	$scope.tipoSeleccionado = 'PA';
@@ -11,6 +16,10 @@ function EncuestaDiseniarController($scope, $http){
 	$scope.textoPregunta = "";
 	$scope.responseGuardarPregunta = {};
 	$scope.mostrarAlerta = false;
+	
+	if(TEST){
+		$scope.textoPregunta = "donde esta Roger Rabbit?";
+	}
 	
 	$scope.tipoPreguntaSelectChange = function(){
 		
@@ -63,10 +72,14 @@ function EncuestaDiseniarController($scope, $http){
 			data: angular.toJson($scope.responseGuardarPregunta)
 		}).
 		success(function(data, status, headers, config) {
-			alert(data.result);
+			if(data.result == 'ok'){
+				
+			}
 		}).
 		error(function(data, status, headers, config) {
 			alert(data);
 		});
 	};
 }
+
+

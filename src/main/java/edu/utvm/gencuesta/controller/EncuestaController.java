@@ -1,17 +1,23 @@
 package edu.utvm.gencuesta.controller;
 
 import java.io.IOException;
+import java.util.Set;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.validation.ConstraintViolation;
 import javax.validation.Valid;
+import javax.validation.Validation;
+import javax.validation.Validator;
+import javax.validation.ValidatorFactory;
 
 import org.apache.commons.lang.builder.ToStringBuilder;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -51,11 +57,20 @@ public class EncuestaController {
 			headers={"content-type=application/json"})
     public @ResponseBody String handleIndexRequestSaveQuestion(
     		HttpServletRequest request, 
-    		HttpServletResponse response, 
+    		HttpServletResponse response,
     		@RequestBody JsonRequestSaveQuestion value)
             throws ServletException, IOException {
 		response.setHeader("content-type", "application/json");
 		log.info(gson.toJson(value));
+		
+		ValidatorFactory validatorFactory = Validation.buildDefaultValidatorFactory();
+		Validator validator = validatorFactory.getValidator();
+		Set<ConstraintViolation<JsonRequestSaveQuestion>> violations = validator.validate(value);
+		for (ConstraintViolation<JsonRequestSaveQuestion> violation : violations) {
+			String propertyPath = violation.getPropertyPath().toString();
+			String message = violation.getMessage();
+			System.out.println("invalid value for: '" + propertyPath + "': " + message);
+		}		
 		return gson.toJson(new JsonResponse("ok"));
     }
 

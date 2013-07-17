@@ -4,7 +4,7 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 <!DOCTYPE html>
-<html>
+<html ng-app>
   <head>
     <title>Bootstrap 101 Template</title>
     <meta charset="utf-8"/>
@@ -13,10 +13,13 @@
     <link href="${pageContext.request.contextPath}/web-resources/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
     <link href="${pageContext.request.contextPath}/web-resources/bootstrap/css/bootstrap-responsive.css" rel="stylesheet">     
     <script src="${pageContext.request.contextPath}/web-resources/js/jquery-1.8.3.js"></script>
-    <script src="${pageContext.request.contextPath}/web-resources/bootstrap/js/bootstrap.min.js"></script>
+    <script src="${pageContext.request.contextPath}/web-resources/bootstrap/js/bootstrap.min.js"></script>	
+  	<script src="${pageContext.request.contextPath}/web-resources/angular/angular.js"></script>
+  	<script src="${pageContext.request.contextPath}/web-resources/js/app.js"></script>
+  	<script src="${pageContext.request.contextPath}/resolver/js/global"></script>
   
   </head>
-<body>
+<body ng-controller="CrearEncuestaController">
   <header>
       <h2>Generador de encuestas</h2>
       
@@ -43,7 +46,7 @@
                 <p>T&iacutetulo de la encuesta: </p>
 			</blockquote>               
             <div class= "alinear-izquierda" class="controls">              
-              	<form:input path="titulo" class="span7" placeholder="Text input"/>
+              	<form:input path="titulo" class="span7" placeholder="Text input" ng-model="titulo"/>
 				<spring:hasBindErrors name="new-encuesta">
 					<form:errors path="titulo" />
 				</spring:hasBindErrors>
@@ -55,7 +58,7 @@
                 <small>peque&ntildea introducci&oacuten</small>
             </blockquote>
             <div class= "alinear-izquierda" class="controls">
-				<form:textarea class="span7" rows="3" path="descripcion"/>
+				<form:textarea class="span7" rows="3" path="descripcion" ng-model="descripcion"/>
 				<spring:hasBindErrors name="new-encuesta">
 					<form:errors path="descripcion" />
 				</spring:hasBindErrors>

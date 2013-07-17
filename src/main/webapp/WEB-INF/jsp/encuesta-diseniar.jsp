@@ -34,7 +34,7 @@
                 	<a href="#">Mis encuestas</a>
                 </li>
                 <li>
-                	<a href="#">Configuracion</a>
+                	<a href="#">Configuraci&oacuten</a>
                 </li>      
             </ul>
         </div>
@@ -55,7 +55,7 @@
           	<i class="icon-plus"></i>Pregunta
           </a>            	
           <a class="btn btn-large" href="#"><i class="icon-minus"></i> pregunta</a>
-          <a href="${pageContext.request.contextPath}/resolver/encuesta/design">Refrescar</a>
+          <a id="refrescar" href="${pageContext.request.contextPath}/resolver/encuesta/design">Refrescar</a>
 			<!-- Modal -->
             <div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby=" myModalLabel" aria-hidden="true">
               <div class="modal-header">
@@ -75,7 +75,7 @@
                       		<strong>Texto de la pregunta:</strong>
                     		<div class= "alinear-izquierda" class="controls">              
                     	</p>               
-                      		<input class="span14" type="text" ng-model="textoPregunta" placeholder="Text input" required>                      		
+                      		<input id="textoPregunta" class="span14" type="text" ng-model="textoPregunta" placeholder="Text input" required>                      		
                     	</div>                  
 	                    <p>
 							<strong>Tipo de pregunta:</strong>

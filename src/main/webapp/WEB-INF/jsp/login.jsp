@@ -25,7 +25,7 @@
         </div>
       </div>
       <div class="control-group">
-        <label class="control-label" for="inputPassword">Contraseña</label>
+        <label class="control-label" for="inputPassword">Contrase&ntildea</label>
         <div class="controls">
             <input type="password" id="inputPassword" placeholder="Contraseña">
         </div>
@@ -33,10 +33,10 @@
       <div class="control-group">
         <div class="controls">
             <label class="checkbox">
-            <input  type="checkbox"> Mantner la sesión iniciada.
+            <input  type="checkbox"> Mantener la sesi&oacuten iniciada.
             </label> </br></br>
-            <button type="submit" class="btn">Iniciar Sesión</button></br>
-            <a href='http://'    >�Has olvidado tu contrase�a?</a>
+            <button type="submit" class="btn">Iniciar Sesi&oacuten</button></br>
+            <a href='http://'>Has olvidado tu contrase&ntildea?</a>
         </div>
       </div>
   </form>

@@ -3,13 +3,16 @@ package edu.utvm.gencuesta.jsondomain;
 import java.util.List;
 
 import org.apache.commons.lang.builder.ToStringBuilder;
+import org.hibernate.validator.constraints.NotEmpty;
 
 public class JsonRequestSaveQuestion {
+	@NotEmpty
 	private String tipoSeleccionado;
 	private boolean esPreguntaAbierta;
 	private boolean esPreguntaDeTiempo;
 	private boolean esPreguntaObligatoria;
 	private int tiempo;
+	@NotEmpty
 	private String textoPregunta;
 	private List<String> opciones;
 	
