@@ -24,14 +24,14 @@ public class Encuesta {
 	private boolean permitirModificacion;
 	private Date fechaLimiteModificacion;
 	
-	public Encuesta(String titulo, String descripcion, Pregunta primeraPregunta){
-		this.setTitulo(titulo);
+	public Encuesta(String titulo, String descripcion, Usuario usuario){
+		this.titulo = titulo;
 		this.descripcion = descripcion;
 		java.util.Date fecha = new Date();
 		fechaCreacion = fecha;	
 		this.preguntas = new ArrayList<Pregunta>();
 		this.palabrasClave = new ArrayList<String>();
-		this.preguntas.add(primeraPregunta);
+		this.usuario = usuario;
 	}
 	
 	public void setPermitirModificacion(boolean permitirModificacion ){
@@ -72,5 +72,25 @@ public class Encuesta {
 
 	public void setTitulo(String titulo) {
 		this.titulo = titulo;
+	}
+
+	public String getId() {
+		return id;
+	}
+
+	public Usuario getUsuario() {
+		return usuario;
+	}
+
+	public ArrayList<Pregunta> getPreguntas() {
+		return preguntas;
+	}
+
+	public Date getFechaCreacion() {
+		return fechaCreacion;
+	}
+
+	public ArrayList<String> getPalabrasClave() {
+		return palabrasClave;
 	}
 }

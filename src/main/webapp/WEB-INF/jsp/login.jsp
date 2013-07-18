@@ -11,10 +11,7 @@
     <script src="${pageContext.request.contextPath}/web-resources/bootstrap/js/bootstrap.min.js"></script> 
   </head>
 <body>
-  <header>
-      <h2>Generador de encuestas</h2>
-      
-  </header>
+
 
   <div id= "contenedor-login" class="container">
   <form class="form-horizontal">
@@ -27,22 +24,20 @@
       <div class="control-group">
         <label class="control-label" for="inputPassword">Contrase&ntildea</label>
         <div class="controls">
-            <input type="password" id="inputPassword" placeholder="Contraseña">
+            <input type="password" id="inputPassword" placeholder="Clave">
         </div>
       </div>
       <div class="control-group">
         <div class="controls">
             <label class="checkbox">
-            <input  type="checkbox"> Mantener la sesi&oacuten iniciada.
-            </label> </br></br>
+            	<input  type="checkbox"> Mantener la sesi&oacuten iniciada.
+            </label>
             <button type="submit" class="btn">Iniciar Sesi&oacuten</button></br>
-            <a href='http://'>Has olvidado tu contrase&ntildea?</a>
+            <a href='#'>Has olvidado tu contrase&ntildea?</a>
         </div>
       </div>
   </form>
 </div>
-<footer>
-    <p>SANCHEZ lEVARIO Esmeralda</p>
-</footer>
+
 </body>
 </html>

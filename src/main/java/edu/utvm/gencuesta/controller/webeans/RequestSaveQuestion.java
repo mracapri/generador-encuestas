@@ -1,11 +1,11 @@
-package edu.utvm.gencuesta.jsondomain;
+package edu.utvm.gencuesta.controller.webeans;
 
 import java.util.List;
 
 import org.apache.commons.lang.builder.ToStringBuilder;
 import org.hibernate.validator.constraints.NotEmpty;
 
-public class JsonRequestSaveQuestion {
+public class RequestSaveQuestion {
 	@NotEmpty
 	private String tipoSeleccionado;
 	private boolean esPreguntaAbierta;

@@ -11,25 +11,12 @@
     <script src="${pageContext.request.contextPath}/web-resources/bootstrap/js/bootstrap.min.js"></script>
   </head>
 <body>
-  <header>
-      <h2>Generador de encuestas</h2>
-      
-  </header>
+
   <!-- header -->
-  <div id= "contenedor-principal"class="container">
-    <div class="navbar navbar-inverse">
-        <div class="navbar-inner">
-          <a class="brand" href="crear-encuesta.html">Crear encuesta</a>
-            <ul class="nav">
-                <li class="active"><a href="mis-encuestas.html">Mis encuestas</a></li>
-                <li><a href="#">Configuraci&oacuten</a></li>
-      
-            </ul>
-        </div>
-    </div>
+  <div class="container">
 
     <div id = "busquedas-rapidas" class="row-fluid">
-    <!--Body content-->
+    	<!--Body content-->
         <form class="form-horizontal">
           <blockquote>
                 <p>Busquedas r&aacutepidas</p>
@@ -37,7 +24,7 @@
           </blockquote>          
           <form class="form-search">
             <input type="text" class="input-medium search-query">
-            <button type="submit" class="btn">Search</button>
+            <button type="submit" class="btn">Buscar</button>
           </form>
           
           <blockquote>                
@@ -45,16 +32,13 @@
           </blockquote> 
           <form class="form-search">
             <input type="text" class="input-medium search-query">
-            <button type="submit" class="btn">Search</button>
+            <button type="submit" class="btn">Buscar</button>
           </form>     
         </form>        
-    <!--Body content-->
+    	<!--Body content-->
     </div> 
 
   </div>
 
-  <footer>
-    <p>SANCHEZ lEVARIO Esmeralda</p>
-  </footer>
 </body>
 </html>

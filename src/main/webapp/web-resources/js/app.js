@@ -31,7 +31,7 @@ function EncuestaDiseniarController($scope, $http){
 		}
 	};
 	
-	$scope.guardarPregunta = function(){		
+	$scope.validarPregunta = function(){		
 		
 		/* validaciones */
 		if($scope.textoPregunta == ""){
@@ -51,34 +51,7 @@ function EncuestaDiseniarController($scope, $http){
 			$scope.mostrarAlerta = true;
 			return;
 		}
-		
-		/* construyendo request */
-		$scope.responseGuardarPregunta = {
-				tipoSeleccionado : $scope.tipoSeleccionado,
-				esPreguntaAbierta : $scope.esPreguntaAbierta,
-				esPreguntaDeTiempo : $scope.esPreguntaDeTiempo,
-				esPreguntaObligatoria : $scope.esPreguntaObligatoria,
-				tiempo : $scope.tiempo,
-				textoPregunta : $scope.textoPregunta,
-				opciones : $scope.opciones
-		};
-		
-		$scope.mostrarAlerta = false;
-		
-		alert(angular.toJson($scope.responseGuardarPregunta, true));
-		
-		/* enviando request */		
-		$http({method: 'POST', url: URL_APP_SERVICE +'/encuesta/save-question', 
-			data: angular.toJson($scope.responseGuardarPregunta)
-		}).
-		success(function(data, status, headers, config) {
-			if(data.result == 'ok'){
-				
-			}
-		}).
-		error(function(data, status, headers, config) {
-			alert(data);
-		});
+		$("#formRequestSaveQuestion").submit();
 	};
 }
 
