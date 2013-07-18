@@ -37,7 +37,7 @@
 						<strong>Tipo de pregunta:</strong>
 					</p>    
 
-					<form:select path="opciones" ng-model="tipoSeleccionado" class="span7" ng-change="tipoPreguntaSelectChange()">
+					<form:select path="tipoSeleccionado" ng-model="tipoSeleccionado" class="span7" ng-change="tipoPreguntaSelectChange()">
 						<form:options items="${tiposPreguntas}" itemValue="clave" itemLabel="descripcion" />
 					</form:select>
 					<p>
@@ -49,9 +49,9 @@
 						<small> Ingresar cada opcion separada por comas. Ejemplo:<b>avion, auto, camioneta</b></small>
                     </p>
 
-					<form:textarea path="opciones" class="span14" rows="1" ng-disabled="esPreguntaAbierta" ng-model="opciones" ng-list="" required="" />
-					{{opciones}}
-					
+					<textarea path="opciones" class="span14" rows="3" ng-disabled="esPreguntaAbierta" ng-model="opciones" ng-list="*" required="" >
+					</textarea>
+					<form:input path="opciones" value="{{opciones}}"/>
 					
 					<label class="checkbox">
 						<form:checkbox path="esPreguntaObligatoria" ng-model="esPreguntaObligatoria"/>
