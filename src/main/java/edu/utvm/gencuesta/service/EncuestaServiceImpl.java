@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import edu.utvm.gencuesta.domain.Encuesta;
+import edu.utvm.gencuesta.domain.Pregunta;
 import edu.utvm.gencuesta.repository.EncuestaRepository;
 
 @Service
@@ -15,10 +16,13 @@ public class EncuestaServiceImpl implements EncuestaService{
 	EncuestaRepository encuestaRepository;
 	
 	@Override
-	public void save(Encuesta encuesta) {
-		
-		/* Se implementa la logica del negocio */		
+	public void save(Encuesta encuesta) {		
 		encuestaRepository.save(encuesta);
+	}
+	
+	@Override
+	public void save(Encuesta encuesta, Pregunta pregunta) {
+		
 	}
 
 	@Override

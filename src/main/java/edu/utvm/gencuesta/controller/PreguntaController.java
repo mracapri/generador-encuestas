@@ -100,7 +100,7 @@ public class PreguntaController {
 		model.addObject("tiposPreguntas", catalogos.getTiposPreguntas());
 		
 		log.debug(gson.toJson(encuesta));
-		
+			
 		encuesta.getPreguntas().add(new Pregunta());
 		encuestaService.save(encuesta);
 		
