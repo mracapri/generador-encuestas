@@ -50,11 +50,11 @@ public class Encuesta {
 		return this.fechaLimiteModificacion;		
 	}
 	
-	public void setPalabraClave(String palabraClave){
+	public void setPalabrasClave(String palabraClave){
 		this.palabrasClave.add(palabraClave);		
 	}
 	
-	public ArrayList<String> getPalabraClave(){
+	public ArrayList<String> getPalabrasClave(){
 		return this.palabrasClave;		
 	}
 	
@@ -88,9 +88,5 @@ public class Encuesta {
 
 	public Date getFechaCreacion() {
 		return fechaCreacion;
-	}
-
-	public ArrayList<String> getPalabrasClave() {
-		return palabrasClave;
 	}
 }

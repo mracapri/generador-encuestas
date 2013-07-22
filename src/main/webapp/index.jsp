@@ -16,7 +16,7 @@
 					<a href="${pageContext.request.contextPath}/resolver/encuesta/create-form">crear-encuesta</a>
 				</li>
 				<li>
-					<a href="${pageContext.request.contextPath}/resolver/views/mis-encuestas">mis-encuestas</a>
+					<a href="${pageContext.request.contextPath}/resolver/encuesta/all">mis-encuestas</a>
 				</li>
 			</ul>
 		</nav>

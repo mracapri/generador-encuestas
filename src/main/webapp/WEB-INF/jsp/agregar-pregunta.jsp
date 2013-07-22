@@ -46,12 +46,11 @@
 					
                     <p>
 						<strong>Opciones de respuesta: </strong>
-						<small> Ingresar cada opcion separada por comas. Ejemplo:<b>avion, auto, camioneta</b></small>
+						<small> Ingresar cada opcion separada por comas. Ejemplo:<b>avion; auto; camioneta</b></small>
                     </p>
 
-					<textarea path="opciones" class="span14" rows="3" ng-disabled="esPreguntaAbierta" ng-model="opciones" ng-list="*" required="" >
-					</textarea>
-					<form:input path="opciones" value="{{opciones}}"/>
+					<form:textarea path="opciones" class="span14" rows="3" ng-disabled="esPreguntaAbierta" ng-model="opciones" ng-list=";" required="required" />
+					Opciones: {{opciones}}
 					
 					<label class="checkbox">
 						<form:checkbox path="esPreguntaObligatoria" ng-model="esPreguntaObligatoria"/>

@@ -1,5 +1,8 @@
 package edu.utvm.gencuesta.domain;
 
+import org.springframework.data.mongodb.core.mapping.Document;
+
+@Document
 public class Pregunta {
 	private boolean obligatorio;
 	private String descripcion;
@@ -8,9 +11,13 @@ public class Pregunta {
 
 	public Pregunta() {
 		/*
-		 * Crea una preguna sin descricion, no obligatoria, que no es de tiempo
+		 * Crea una preguna sin descripcion, no obligatoria, que no es de tiempo
 		 * y tiempo cero
 		 */
+		setDescripcion("Sin descripcion");
+		setObligatorio(false);
+		setEsDeTiempo(false);
+		setTiempo(0);
 	}
 
 	public Pregunta(String descripcion, boolean obligatorio) {

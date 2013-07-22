@@ -1,5 +1,7 @@
 package edu.utvm.gencuesta.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -13,10 +15,20 @@ public class EncuestaServiceImpl implements EncuestaService{
 	EncuestaRepository encuestaRepository;
 	
 	@Override
-	public void registrarEncuesta(Encuesta encuesta) {
+	public void save(Encuesta encuesta) {
 		
 		/* Se implementa la logica del negocio */		
 		encuestaRepository.save(encuesta);
+	}
+
+	@Override
+	public List<Encuesta> findAll() {
+		return encuestaRepository.findAll();
+	}
+
+	@Override
+	public Encuesta read(String id) {
+		return encuestaRepository.findOneById(id);
 	}
 
 }

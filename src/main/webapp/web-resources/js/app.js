@@ -51,6 +51,9 @@ function EncuestaDiseniarController($scope, $http){
 			$scope.mostrarAlerta = true;
 			return;
 		}
+		
+		window.console.info($scope.opciones);
+		
 		$("#formRequestSaveQuestion").submit();
 	};
 }

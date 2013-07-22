@@ -38,12 +38,4 @@ public class IndexController {
 		
 		return model;
     }
-	
-	@RequestMapping(value="/mis-encuestas")
-    public ModelAndView handleIndexRequestLoginMisEncuestas(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-		ModelAndView model = new ModelAndView("mis-encuestas");
-		
-		return model;
-    }
 }

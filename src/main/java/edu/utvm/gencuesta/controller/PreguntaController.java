@@ -15,6 +15,7 @@ import javax.validation.ValidatorFactory;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.propertyeditors.StringArrayPropertyEditor;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.WebDataBinder;
@@ -24,6 +25,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.google.gson.Gson;
@@ -31,17 +33,17 @@ import com.google.gson.Gson;
 import edu.utvm.gencuesta.controller.validator.RequestSaveQuestionValidator;
 import edu.utvm.gencuesta.controller.webeans.RequestSaveQuestion;
 import edu.utvm.gencuesta.controller.webeans.Response;
+import edu.utvm.gencuesta.domain.Encuesta;
+import edu.utvm.gencuesta.domain.Pregunta;
 import edu.utvm.gencuesta.service.EncuestaService;
 import edu.utvm.gencuesta.util.CatalogosEstaticos;
 
 @Controller
 @RequestMapping("encuesta/pregunta")
+@SessionAttributes({ "encuestaActual" })
 public class PreguntaController {
 
 	protected final Log log = LogFactory.getLog(getClass());
-
-	@Autowired
-	private EncuestaService serviceEncuesta;
 
 	@Autowired
 	private CatalogosEstaticos catalogos;
@@ -49,6 +51,9 @@ public class PreguntaController {
 	@Autowired
 	private RequestSaveQuestionValidator validator;
 
+	@Autowired
+	private EncuestaService encuestaService;
+	
 	@Autowired
 	private Gson gson;
 
@@ -74,7 +79,7 @@ public class PreguntaController {
 				String message = violation.getMessage();
 				jsonResponse.getErrores().put(propertyPath, message);
 			}
-			// renderea los errroes en body
+			// renderea los errores en body
 			jsonResponse.setResult("error");
 			return gson.toJson(jsonResponse);
 		} else {
@@ -86,10 +91,19 @@ public class PreguntaController {
 	public ModelAndView handleIndexRequestSaveQuestionForm(
 			HttpServletRequest request,
 			HttpServletResponse response,
-			@ModelAttribute("requestSaveQuestion") @Valid RequestSaveQuestion value,
+			@ModelAttribute("encuestaActual") Encuesta encuesta,
+			@ModelAttribute("requestSaveQuestion") @Valid RequestSaveQuestion value,			
 			BindingResult result) throws ServletException, IOException {
 		ModelAndView model = new ModelAndView("redirect:../design");
+		log.info(gson.toJson(value));
+		log.info(gson.toJson(value.getListOpciones()));
 		model.addObject("tiposPreguntas", catalogos.getTiposPreguntas());
+		
+		log.debug(gson.toJson(encuesta));
+		
+		encuesta.getPreguntas().add(new Pregunta());
+		encuestaService.save(encuesta);
+		
 		if(result.hasErrors()){
 			model.setViewName("agregar-pregunta");
 			model.addObject("result", result);

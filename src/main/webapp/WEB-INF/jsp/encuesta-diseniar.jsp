@@ -24,14 +24,33 @@
 		  	<!-- Contenedor -->
 		  	
 			<div class="row-fluid">
-			
-				<a  href="${pageContext.request.contextPath}/resolver/encuesta/pregunta/create-form-pregunta" class="btn btn-large"  data-toggle="modal">
-					<i class="icon-plus"></i>Pregunta
-				</a>      
-				<a class="btn btn-large" href="#">
-					<i class="icon-minus"></i> pregunta
-				</a>
-			
+				<div class="span2">
+					<a  href="${pageContext.request.contextPath}/resolver/encuesta/pregunta/create-form-pregunta" class="btn btn-large"  data-toggle="modal">
+						<i class="icon-plus"></i>Pregunta
+					</a>      
+					<a class="btn btn-large" href="#">
+						<i class="icon-minus"></i> pregunta
+					</a>
+				</div>
+				<div class="span10">
+			        <!--Body content-->
+			        <table class="table table-hover">
+			          <caption>Preguntas de la encuesta</caption>
+			          <thead>
+			            <tr>
+			              <th>Titulo</th>
+			            </tr>
+			          </thead>
+			          <tbody>
+			          	<c:forEach var="pregunta" items="${encuestaActual.preguntas}">
+				            <tr>
+				              <td>${pregunta.descripcion}</td>
+				            </tr>
+			          	</c:forEach>
+			          </tbody>
+			        </table>       
+			        <!--Body content-->
+				</div>
 			</div>
 		
 			<!-- Contenedor --> 

@@ -1,3 +1,8 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -25,25 +30,33 @@
 	          <caption>Administrador de encuestas</caption>
 	          <thead>
 	            <tr>
-	              <th>Titulo de la encuesta</th>
-	              <th>Fecha de creaci&oacuten</th>
-	              <th>Fecha de modificaci&oacuten</th>
-	              <th>Palabras clave</th>
+	              <th>Titulo</th>
+	              <th>Descripci&oacuten</th>
+	              <th>Creaci&oacuten</th>
+	              <th>Limite</th>
+	              <th>P. clave</th>	              
 	            </tr>
 	          </thead>
 	          <tbody>
-	            <tr>
-	              <td>d</td>
-	              <td>e</td>
-	              <td>d</td>
-	              <td>e</td>
-	            </tr>
-	            <tr>
-	              <td>f</td>
-	              <td>w</td>
-	              <td>d</td>
-	              <td>e</td>
-	            </tr>
+	          	<c:forEach var="encuesta" items="${encuestas}">
+		            <tr>
+		              <td>${encuesta.titulo}</td>
+		              <td>${encuesta.descripcion}</td>
+		              <td>
+						<fmt:formatDate type="both" value="${encuesta.fechaCreacion}" />
+		              </td>
+		              <td>
+						<fmt:formatDate type="both" value="${encuesta.fechaLimiteModificacion}" />
+		              </td>
+		              <td>${encuesta.palabrasClave}</td>
+		              <td>
+		              	<a href="${pageContext.request.contextPath}/resolver/encuesta/design/${encuesta.id}">Preguntas</a>
+		              </td>
+		              <td>
+		              	<a href="#">Configuraci&oacuten</a>
+		              </td>
+		            </tr>
+	          	</c:forEach>
 	          </tbody>
 	        </table>       
 	        <!--Body content-->

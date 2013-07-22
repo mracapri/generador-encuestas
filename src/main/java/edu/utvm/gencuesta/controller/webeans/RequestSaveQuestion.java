@@ -1,5 +1,7 @@
 package edu.utvm.gencuesta.controller.webeans;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import org.apache.commons.lang.builder.ToStringBuilder;
@@ -14,7 +16,7 @@ public class RequestSaveQuestion {
 	private int tiempo;
 	@NotEmpty
 	private String textoPregunta;
-	private List<String> opciones;
+	private String opciones;
 	
 	@Override
 	public String toString() {
@@ -69,11 +71,20 @@ public class RequestSaveQuestion {
 		this.textoPregunta = textoPregunta;
 	}
 
-	public List<String> getOpciones() {
+	public String getOpciones() {
 		return opciones;
 	}
 
-	public void setOpciones(List<String> opciones) {
+	public List<String> getListOpciones() {
+		if(this.opciones != null){
+			String[] split = this.opciones.split(";");
+			return new ArrayList<String>(Arrays.asList(split));
+		}else{
+			return new ArrayList<String>();
+		}
+	}
+
+	public void setOpciones(String opciones) {
 		this.opciones = opciones;
 	}
 }

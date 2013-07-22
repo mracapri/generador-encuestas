@@ -23,7 +23,7 @@
 		<div class="container">
 			<div class="row-fluid">
 				<!--Body content-->
-				<form:form action="save-encuesta" method="post" class="form-horizontal" modelAttribute="new-encuesta" name="encuesta">
+				<form:form action="save-encuesta" method="post" class="form-horizontal" modelAttribute="encuestaActual" name="encuesta">
 				
 					<p>T&iacutetulo de la encuesta: </p>             
 					<form:input path="titulo" class="span7" placeholder="Text input" ng-model="titulo"/>
