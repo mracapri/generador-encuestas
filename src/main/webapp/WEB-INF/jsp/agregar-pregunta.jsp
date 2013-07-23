@@ -67,7 +67,7 @@
 					</label>
 					<div ng-show="esPreguntaDeTiempo">
 						<small>
-							Tiempo en minutos <input type="number" ng-model="tiempo" min="0" max="99"/> minutos
+							Tiempo en minutos <form:input path="tiempo" type="number" ng-model="tiempo" min="0" max="99"/> minutos
 						</small>
 					</div>
 					<button type="button" id="btn-enviar-pregunta" class="btn" ng-click="validarPregunta()">Crear</button>

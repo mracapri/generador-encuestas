@@ -18,7 +18,7 @@ public class RequestSaveQuestionValidator extends LocalValidatorFactoryBean impl
 			error.rejectValue("tiempo", "tiempo.mayor.a.cero");	
 		}
 		
-		if(!saveQuestion.isEsPreguntaAbierta()){
+		if(!saveQuestion.isEsPreguntaObligatoria()){
 			error.rejectValue("opciones", "opciones.obligatorias");	
 		}
 	}

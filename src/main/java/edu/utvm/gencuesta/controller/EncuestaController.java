@@ -81,6 +81,18 @@ public class EncuestaController {
 		model.addObject("encuesta", encuesta);
 		return model;
 	}
+	
+	@RequestMapping(value = "/configurate/{id}")
+	public ModelAndView handleIndexRequestEncuestaConfigurar(			
+			HttpServletRequest request, HttpServletResponse response,
+			@PathVariable("id") String id)
+			throws ServletException, IOException {
+		ModelAndView model = new ModelAndView("configurar-encuesta");
+		log.debug(id);
+		Encuesta read = serviceEncuesta.read(id);
+		model.addObject("encuestaActual", read);
+		return model;
+	}
 
 	@RequestMapping(value = "/design/{id}")
 	public ModelAndView handleIndexRequestEncuestaDiseniarById(			

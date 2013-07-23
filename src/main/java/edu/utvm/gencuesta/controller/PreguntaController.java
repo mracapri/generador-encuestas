@@ -15,7 +15,6 @@ import javax.validation.ValidatorFactory;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.propertyeditors.StringArrayPropertyEditor;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.WebDataBinder;
@@ -34,7 +33,6 @@ import edu.utvm.gencuesta.controller.validator.RequestSaveQuestionValidator;
 import edu.utvm.gencuesta.controller.webeans.RequestSaveQuestion;
 import edu.utvm.gencuesta.controller.webeans.Response;
 import edu.utvm.gencuesta.domain.Encuesta;
-import edu.utvm.gencuesta.domain.Pregunta;
 import edu.utvm.gencuesta.service.EncuestaService;
 import edu.utvm.gencuesta.util.CatalogosEstaticos;
 
@@ -95,15 +93,12 @@ public class PreguntaController {
 			@ModelAttribute("requestSaveQuestion") @Valid RequestSaveQuestion value,			
 			BindingResult result) throws ServletException, IOException {
 		ModelAndView model = new ModelAndView("redirect:../design");
-		log.info(gson.toJson(value));
-		log.info(gson.toJson(value.getListOpciones()));
-		model.addObject("tiposPreguntas", catalogos.getTiposPreguntas());
-		
+		log.debug(gson.toJson(value));
+		log.debug(gson.toJson(value.getListOpciones()));
 		log.debug(gson.toJson(encuesta));
-			
-		encuesta.getPreguntas().add(new Pregunta());
+		model.addObject("tiposPreguntas", catalogos.getTiposPreguntas());
+		encuesta.getPreguntas().add(value.toPregunta());
 		encuestaService.save(encuesta);
-		
 		if(result.hasErrors()){
 			model.setViewName("agregar-pregunta");
 			model.addObject("result", result);

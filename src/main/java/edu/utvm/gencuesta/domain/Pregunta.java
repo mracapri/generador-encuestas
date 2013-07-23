@@ -29,6 +29,7 @@ public class Pregunta {
 			boolean esDeTiempo, int tiempo) {
 		this(descripcion, obligatorio);
 		this.esDeTiempo = esDeTiempo;
+		this.tiempo = tiempo;
 	}
 
 	public void setDescripcion(String nuevaDescripcion) {
@@ -63,4 +64,11 @@ public class Pregunta {
 		return this.tiempo;
 	}
 
+	public String getTipoPregunta(){
+		return "Pregunta generica";
+	}
+	
+	public String getDetalleOpciones(){
+		return "Sin opciones";
+	}
 }

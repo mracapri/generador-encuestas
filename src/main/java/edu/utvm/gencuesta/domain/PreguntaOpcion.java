@@ -5,10 +5,14 @@ import java.util.List;
 
 public class PreguntaOpcion extends Pregunta{
 	private List<String> opciones = new ArrayList<String>();
-	private int opcionSeleccionada = -1;	
+	
+	public PreguntaOpcion() {
+		super("Sin descripcion", false, false, 0);
+		this.opciones = new ArrayList<String>();
+	}
 	
 	public PreguntaOpcion(String descripcion, boolean obligatorio,
-			boolean esDeTiempo, int tiempo, ArrayList<String> opciones) {
+			boolean esDeTiempo, int tiempo, List<String> opciones) {
 		super(descripcion,obligatorio,esDeTiempo, tiempo);
 		this.opciones = opciones;
 	}	
@@ -17,11 +21,13 @@ public class PreguntaOpcion extends Pregunta{
 		return opciones;
 	}
 
-	public int getOpcionSeleccionada() {
-		return opcionSeleccionada;
+	@Override
+	public String getTipoPregunta() {
+		return "Pregunta de Opcion";
 	}
-
-	public void setOpcionSeleccionada(int opcionSeleccionada) {
-		this.opcionSeleccionada = opcionSeleccionada;
+	
+	@Override
+	public String getDetalleOpciones(){
+		return opciones.toString();
 	}
 }

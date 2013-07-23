@@ -38,13 +38,38 @@
 			          <caption>Preguntas de la encuesta</caption>
 			          <thead>
 			            <tr>
-			              <th>Titulo</th>
+			              <th>Pregunta</th>
+			              <th>Tipo</th>
+			              <th>Opciones</th>
+			              <th>De tiempo</th>
+			              <th>Obligatoria</th>
 			            </tr>
 			          </thead>
 			          <tbody>
 			          	<c:forEach var="pregunta" items="${encuestaActual.preguntas}">
 				            <tr>
 				              <td>${pregunta.descripcion}</td>
+				              <td>${pregunta.tipoPregunta}</td>
+				              <td>${pregunta.detalleOpciones}</td>
+				              <td>
+								<c:if test="${pregunta.esDeTiempo}">
+									Si - ${pregunta.tiempo}
+								</c:if>
+								<c:if test="${!pregunta.esDeTiempo}">
+									No
+								</c:if>
+				              </td>
+				              <td>
+								<c:if test="${pregunta.obligatorio}">
+									Si
+								</c:if>
+								<c:if test="${!pregunta.obligatorio}">
+									No
+								</c:if>
+				              </td>
+				              <td>
+				              	<a href="#">Configurar</a>
+				              </td>
 				            </tr>
 			          	</c:forEach>
 			          </tbody>

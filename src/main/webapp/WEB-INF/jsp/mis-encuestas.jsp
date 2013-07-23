@@ -53,7 +53,7 @@
 		              	<a href="${pageContext.request.contextPath}/resolver/encuesta/design/${encuesta.id}">Preguntas</a>
 		              </td>
 		              <td>
-		              	<a href="#">Configuraci&oacuten</a>
+		              	<a href="${pageContext.request.contextPath}/resolver/encuesta/configurate/${encuesta.id}">Configurar</a>
 		              </td>
 		            </tr>
 	          	</c:forEach>

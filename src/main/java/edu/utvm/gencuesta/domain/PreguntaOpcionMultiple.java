@@ -5,21 +5,34 @@ import java.util.List;
 
 public class PreguntaOpcionMultiple extends Pregunta {
 	private List<String> opciones = new ArrayList<String>();
-	private List<Integer> opcionesSeleccionadas = new ArrayList<Integer>();	
-	
+
+	public PreguntaOpcionMultiple() {
+		super("Sin descripcion", false, false, 0);
+		this.opciones = new ArrayList<String>();
+	}
+
 	public PreguntaOpcionMultiple(String descripcion, boolean obligatorio,
-			boolean esDeTiempo, int tiempo, ArrayList<String> opciones) {
-		super(descripcion,obligatorio,esDeTiempo, tiempo);
+			boolean esDeTiempo, int tiempo, List<String> opciones) {
+		super(descripcion, obligatorio, esDeTiempo, tiempo);
 		this.opciones = opciones;
+	}
+	
+	@Override
+	public String getId() {
+		return id;
 	}
 
 	public List<String> getOpciones() {
 		return opciones;
 	}
 
-
-	public List<Integer> getOpcionesSeleccionadas() {
-		return opcionesSeleccionadas;
+	@Override
+	public String getTipoPregunta() {
+		return "Pregunta de Opcion Multiple";
 	}
-
+	
+	@Override
+	public String getDetalleOpciones(){
+		return opciones.toString();
+	}
 }
