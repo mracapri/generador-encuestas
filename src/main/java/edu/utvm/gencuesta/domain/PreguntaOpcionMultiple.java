@@ -16,11 +16,6 @@ public class PreguntaOpcionMultiple extends Pregunta {
 		super(descripcion, obligatorio, esDeTiempo, tiempo);
 		this.opciones = opciones;
 	}
-	
-	@Override
-	public String getId() {
-		return id;
-	}
 
 	public List<String> getOpciones() {
 		return opciones;

@@ -1,6 +1,10 @@
 package edu.utvm.gencuesta.domain;	
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 
 import org.hibernate.validator.constraints.NotEmpty;
 import org.springframework.data.annotation.Id;
@@ -11,7 +15,7 @@ public class Encuesta {
 	@Id
 	private String id;
 	private Usuario usuario;
-	private ArrayList<Pregunta> preguntas;
+	private List<Pregunta> preguntas;
 	private Date fechaCreacion;
 	
 	@NotEmpty
@@ -20,17 +24,19 @@ public class Encuesta {
 	@NotEmpty
 	private String descripcion;
 	
-	private ArrayList<String> palabrasClave;
+	private Set<String> palabrasClave;
 	private boolean permitirModificacion;
 	private Date fechaLimiteModificacion;
 	
 	public Encuesta(String titulo, String descripcion, Usuario usuario){
 		this.titulo = titulo;
 		this.descripcion = descripcion;
-		java.util.Date fecha = new Date();
-		fechaCreacion = fecha;	
+		fechaCreacion = new Date();
+		Calendar calendar = Calendar.getInstance();
+		calendar.set(Calendar.YEAR + 1, Calendar.MONTH, Calendar.DATE);
+		fechaLimiteModificacion = calendar.getTime();
 		this.preguntas = new ArrayList<Pregunta>();
-		this.palabrasClave = new ArrayList<String>();
+		this.palabrasClave = new HashSet<String>();
 		this.usuario = usuario;
 	}
 	
@@ -54,10 +60,18 @@ public class Encuesta {
 		this.palabrasClave.add(palabraClave);		
 	}
 	
-	public ArrayList<String> getPalabrasClave(){
+	public Set<String> getPalabrasClave(){
+		if(this.palabrasClave == null){
+			palabrasClave = new HashSet<String>();
+			return palabrasClave;
+		}
 		return this.palabrasClave;		
 	}
 	
+	public void setPalabrasClave(Set<String> palabrasClave) {
+		this.palabrasClave = palabrasClave;
+	}
+
 	public void setDescripcion(String descripcion){
 		this.descripcion=descripcion;		
 	}
@@ -82,7 +96,7 @@ public class Encuesta {
 		return usuario;
 	}
 
-	public ArrayList<Pregunta> getPreguntas() {
+	public List<Pregunta> getPreguntas() {
 		return preguntas;
 	}
 

@@ -61,6 +61,22 @@ public class EncuestaController {
 		}
 		return model;
 	}
+	
+	@RequestMapping(value = "/save-config-encuesta", method = RequestMethod.POST)
+	public ModelAndView handleSaveConfigEncuesta(HttpServletRequest request,
+			HttpServletResponse response,
+			@ModelAttribute("encuestaActual") @Valid Encuesta encuesta,
+			BindingResult result) throws ServletException, IOException {		
+		ModelAndView model = new ModelAndView("redirect:all");
+		
+		if (result.hasErrors()) {			
+			model.setViewName("redirect:configurate/" + encuesta.getId());
+			model.addObject("result", result);
+		} else {
+			serviceEncuesta.save(encuesta);
+		}
+		return model;
+	}
 
 	@RequestMapping(value = "/create-form")
 	public ModelAndView handleIndexRequestLoginCrearEncuesta(
@@ -96,6 +112,23 @@ public class EncuestaController {
 
 	@RequestMapping(value = "/design/{id}")
 	public ModelAndView handleIndexRequestEncuestaDiseniarById(			
+			HttpServletRequest request, HttpServletResponse response,
+			@PathVariable("id") String id)
+			throws ServletException, IOException {
+		ModelAndView model = new ModelAndView("encuesta-diseniar");
+		log.debug(id);
+		Encuesta read = serviceEncuesta.read(id);
+		if (read != null) {
+			log.info(gson.toJson(read));
+			model.addObject("encuestaActual", read);
+		} else {
+			// TODO: redireccionar la vista
+		}
+		return model;
+	}
+
+	@RequestMapping(value = "/delete/{id}")
+	public ModelAndView handleIndexRequestEncuestaDdeleteById(			
 			HttpServletRequest request, HttpServletResponse response,
 			@PathVariable("id") String id)
 			throws ServletException, IOException {

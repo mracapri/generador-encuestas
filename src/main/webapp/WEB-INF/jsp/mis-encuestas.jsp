@@ -34,7 +34,18 @@
 	              <th>Descripci&oacuten</th>
 	              <th>Creaci&oacuten</th>
 	              <th>Limite</th>
-	              <th>P. clave</th>	              
+	              <th>
+					<i class="icon-tags"></i>
+	              </th>
+	              <th>
+					Preguntas
+	              </th>
+	              <th>
+					Configurar
+	              </th>
+	              <th>
+					Borrar
+	              </th>
 	            </tr>
 	          </thead>
 	          <tbody>
@@ -50,10 +61,19 @@
 		              </td>
 		              <td>${encuesta.palabrasClave}</td>
 		              <td>
-		              	<a href="${pageContext.request.contextPath}/resolver/encuesta/design/${encuesta.id}">Preguntas</a>
+		              	<a href="${pageContext.request.contextPath}/resolver/encuesta/design/${encuesta.id}">
+		              		<i class="icon-list"></i>
+		              	</a>
 		              </td>
 		              <td>
-		              	<a href="${pageContext.request.contextPath}/resolver/encuesta/configurate/${encuesta.id}">Configurar</a>
+		              	<a href="${pageContext.request.contextPath}/resolver/encuesta/configurate/${encuesta.id}">
+		              		<i class="icon-wrench"></i>
+		              	</a>
+		              </td>
+		              <td>		              	
+		              	<a href="${pageContext.request.contextPath}/resolver/encuesta/delete/${encuesta.id}">
+		              		<i class="icon-trash"></i>
+		              	</a>
 		              </td>
 		            </tr>
 	          	</c:forEach>

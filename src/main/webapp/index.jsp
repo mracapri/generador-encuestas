@@ -18,6 +18,9 @@
 				<li>
 					<a href="${pageContext.request.contextPath}/resolver/encuesta/all">mis-encuestas</a>
 				</li>
+				<li>
+					<a href="${pageContext.request.contextPath}/resolver/encuesta/desplegar/51ed9f41e4b0bd37a859d76f">desplegar encuesta</a>
+				</li>
 			</ul>
 		</nav>
 	</body>

@@ -23,11 +23,11 @@
 		<div class="container">
 			<div class="row-fluid">
 				<!--Body content-->
-				<form:form action="${pageContext.request.contextPath}/resolver/encuesta/save-encuesta" method="post" class="form-horizontal" modelAttribute="encuestaActual" name="encuesta">
+				<form:form action="${pageContext.request.contextPath}/resolver/encuesta/save-config-encuesta" method="post" class="form-horizontal" modelAttribute="encuestaActual" name="encuesta">
 				
 					<p>T&iacutetulo de la encuesta: </p>             
 					<form:input path="titulo" class="span7" placeholder="Text input" ng-model="titulo"/>
-					<spring:hasBindErrors name="new-encuesta">
+					<spring:hasBindErrors name="encuestaActual">
 						<form:errors path="titulo" />
 					</spring:hasBindErrors>
 					
@@ -37,16 +37,23 @@
 						<small>peque&ntildea introducci&oacuten</small>
 					</p>
 					<form:textarea class="span7" rows="3" path="descripcion" ng-model="descripcion"/>
-					<spring:hasBindErrors name="new-encuesta">
+					<spring:hasBindErrors name="encuestaActual">
 						<form:errors path="descripcion" />
 					</spring:hasBindErrors>
 					
 					
 					<p>Fecha limite de modificaci&oacuten: </p>
-					<form:input path="fechaLimiteModificacion" class="span7" placeholder="Text input" ng-model="fechaLimiteModificacion"/>
+					<form:input path="fechaLimiteModificacion" class="span7" placeholder="Text input"/>
+					<spring:hasBindErrors name="encuestaActual">
+						<form:errors path="fechaLimiteModificacion" />
+					</spring:hasBindErrors>
 					
 					<p>Palabras clave: </p>
-					<form:input path="palabrasClave" class="span7" placeholder="Text input" ng-model="palabrasClave"/>
+					<form:input path="palabrasClave" class="span7" placeholder="Text input"/>
+					<spring:hasBindErrors name="encuestaActual">
+						<form:errors path="palabrasClave" />
+					</spring:hasBindErrors>
+					
 					<button type="submit" class="btn">Crear</button>
 				      
 				</form:form>        
