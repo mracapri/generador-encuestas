@@ -24,15 +24,19 @@
 		<div class="container">
 			<div class="row-fluid">
 				<div class="span12">
-					Esta usted a punto de realizar la encuesta 
-					-<b>${encuesta.descripcion}</b>- que consta de 
-					<b>${fn:length(encuesta.preguntas)} preguntas</b> las cuales
-					podr&aacute iniciar seleccionando el boton -<b>iniciar</b>-
-					<p>
-						<a href="${pageContext.request.contextPath}/resolver/encuesta/desplegar/show/${indexPregunta}" class="btn btn-success">Iniciar</a>
-					</p>
+					${pregunta.descripcion}
+					${pregunta.getClass().name}
 				</div>				
 			</div>
+			<c:if test="${indexPregunta > 0}">
+				<a class="btn" href="${pageContext.request.contextPath}/resolver/encuesta/desplegar/show/${indexPregunta-1}">Atras</a>
+			</c:if>
+			
+			<c:if test="${indexPregunta < (fn:length(encuesta.preguntas) - 1)}">
+				<a class="btn" href="${pageContext.request.contextPath}/resolver/encuesta/desplegar/show/${indexPregunta+1}">Adelante</a>
+			</c:if>
+			
+			<a class="btn" href="#">Guardar</a>
 		</div>
 	
 	</body>

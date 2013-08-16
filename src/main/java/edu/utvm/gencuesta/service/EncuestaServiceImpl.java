@@ -26,13 +26,13 @@ public class EncuestaServiceImpl implements EncuestaService{
 	}
 
 	@Override
-	public List<Encuesta> findAll() {
-		return encuestaRepository.findAll();
+	public Encuesta read(String id) {
+		return encuestaRepository.findOneById(id);
 	}
 
 	@Override
-	public Encuesta read(String id) {
-		return encuestaRepository.findOneById(id);
+	public List<Encuesta> findAllByUsername(String username) {
+		return encuestaRepository.findByUsuario_Usuario(username);
 	}
 
 }

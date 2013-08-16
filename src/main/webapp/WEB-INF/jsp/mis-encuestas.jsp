@@ -3,6 +3,7 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -63,6 +64,7 @@
 		              <td>
 		              	<a href="${pageContext.request.contextPath}/resolver/encuesta/design/${encuesta.id}">
 		              		<i class="icon-list"></i>
+		              		${fn:length(encuesta.preguntas)} 
 		              	</a>
 		              </td>
 		              <td>

@@ -43,7 +43,7 @@ public class EncuestaController {
 			HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 		ModelAndView model = new ModelAndView("mis-encuestas");
-		model.addObject("encuestas", serviceEncuesta.findAll());
+		model.addObject("encuestas", serviceEncuesta.findAllByUsername("mracapri"));
 		return model;
     }
 	

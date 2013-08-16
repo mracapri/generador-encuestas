@@ -9,5 +9,5 @@ public interface EncuestaService {
 	void save(Encuesta encuesta);
 	void save(Encuesta encuesta, Pregunta pregunta);
 	Encuesta read(String id);
-	List<Encuesta> findAll();
+	List<Encuesta> findAllByUsername(String username);
 }
