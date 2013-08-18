@@ -21,23 +21,52 @@
 	</head>
 	<body>
 	
-		<div class="container">
-			<div class="row-fluid">
-				<div class="span12">
-					${pregunta.descripcion}
-					${pregunta.getClass().name}
-				</div>				
+		<form id="form-pregunta" method="post" action="${pageContext.request.contextPath}/resolver/encuesta/desplegar/show/${indexPregunta+1}">
+			<div class="container">
+				<div class="row-fluid">
+					<div class="span12">
+						<p>
+							<b>${pregunta.descripcion}</b>
+						</p>
+						<p>
+							<c:if test="${pregunta.obligatorio == true}">
+								<div class="label label-info">Respuesta obligatoria</div>
+							</c:if>
+						</p>
+					</div>
+				</div>
+				
+				<div class="row-fluid">
+					<div class="span12">
+						<c:if test="${pregunta.class.name == 'edu.utvm.gencuesta.domain.PreguntaAbierta'}">
+							<input type="text" name="respuesta"/>
+						</c:if>
+						<c:if test="${pregunta.class.name == 'edu.utvm.gencuesta.domain.PreguntaOpcion'}">
+							<c:forEach items="${pregunta.opciones}" var="opcion">
+								<p>
+									<c:choose>
+									    <c:when test="${pregunta.obligatorio == true}">
+											<input type="radio" value="${opcion}" name="respuesta" required/> ${opcion}
+									    </c:when>
+									    <c:when test="${pregunta.obligatorio == false}">
+											<input type="radio" value="${opcion}" name="respuesta"/> ${opcion}
+									    </c:when>
+									</c:choose>
+								</p>
+							</c:forEach>
+						</c:if>
+						<c:if test="${pregunta.class.name == 'edu.utvm.gencuesta.domain.PreguntaOpcionMultiple'}">
+							<c:forEach items="${pregunta.opciones}" var="opcion">
+								<p>
+									<input type="checkbox" value="${opcion}" name="respuesta"/> ${opcion}
+								</p>
+							</c:forEach>
+						</c:if>					
+					</div>
+				</div>
+				
+				<button class="btn-info" type="submit">Siguiente</button>
 			</div>
-			<c:if test="${indexPregunta > 0}">
-				<a class="btn" href="${pageContext.request.contextPath}/resolver/encuesta/desplegar/show/${indexPregunta-1}">Atras</a>
-			</c:if>
-			
-			<c:if test="${indexPregunta < (fn:length(encuesta.preguntas) - 1)}">
-				<a class="btn" href="${pageContext.request.contextPath}/resolver/encuesta/desplegar/show/${indexPregunta+1}">Adelante</a>
-			</c:if>
-			
-			<a class="btn" href="#">Guardar</a>
-		</div>
-	
+		</form>
 	</body>
 </html>
