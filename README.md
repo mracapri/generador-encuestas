@@ -14,4 +14,4 @@ Desarrollo
 * Seguridad
 * Creacion de encuensta
 * Creacion de preguntas
-* Despliegue
+* Despliegue de la encuesta pregunta x pregunta
