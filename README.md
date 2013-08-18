@@ -14,3 +14,4 @@ Desarrollo
 * Seguridad
 * Creacion de encuensta
 * Creacion de preguntas
+* Despliegue
