@@ -11,7 +11,7 @@ Mario Rivera Angeles
 
 Desarrollo
 ===================
-* Seguridad
+* Seguridad.
 * Creacion de encuensta
 * Creacion de preguntas
 * Despliegue de la encuesta pregunta x pregunta
